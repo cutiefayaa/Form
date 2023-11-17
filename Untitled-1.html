@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You can be a Content creator too</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('baby_pink_background.jpg'); /* Replace with your baby pink background image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(255, 192, 203, 0.7); /* Baby pink background */
+      border-radius: 10px;
+    }
+    
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      background: #ff69b4; /* Hot pink button color */
+      color: #fff;
+      padding: 10px 20px;
+      border: 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #motto {
+      font-size: 18px;
+      color: #ff69b4; /* Hot pink text color */
+      text-align: center;
+    }
+    #label {
+      font-size: 16px;
+      color: #111111; /* Hot pink text color */
+      text-align: left;
+    }
+  .file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid #c974a8;
+    background-color: #b15f73;
+    color: #000000; 
+    padding: 15px 25px; /* Increase padding for a thicker button */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+  }
+  .file-input-wrapper input {
+    font-size: 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  .custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    border: 2px solid #000700; /* Green border */
+    background-color: #b15f73; 
+    color: #000000; 
+    padding: 0 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    -webkit-appearance: none; /* Remove default arrow in Chrome/Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    appearance: none; /* Remove default arrow in other browsers */
+  }
+  .custom-select::before {
+    content: '\25BC'; /* Unicode for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>You can be a content creator too</h2>
+    <form id="joinForm">
+      <input type="text" id="name" placeholder="Your Name" required><br>
+      <p>Please insert your profile picture:</p>
+      <label for="profilePicture" class="file-input-wrapper">
+        Choose File
+        <input type="file" id="profilePicture" accept="image/*" required>
+      </label>
+      <p>Select Level:</p>
+      <select class="custom-select" id="universityLevel" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="100L">100L</option>
+        <option value="200L">200L</option>
+        <option value="300L">300L</option>
+        <option value="400L">400L</option>
+        <option value="500L">500L</option>
+      </select>
+      <input type="text" id="Hall details" placeholder="Hall details" required><br>
+      <input type="text" id="contentLink" placeholder="Link to Your Content" pattern="https?://.+" title="Include http:// or https:// in the URL" required><br>
+      <textarea id="reason" placeholder="Why you want to join the club" required></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <h3 id="motto">"Together we create memories for a lifetime!"</h3>
+  <script>
+    document.getElementById('joinForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var formData = {
+        name: document.getElementById('name').value,
+        roomHall: document.getElementById('roomHall').value,
+        universityLevel: document.getElementById('universityLevel').value,
+        contentLink: document.getElementById('contentLink').value,
+        reason: document.getElementById('reason').value,
+        motto: document.getElementById('motto').value
+      };
+      console.log(formData); // You can perform further actions with the form data here
+    });
+  </script>
+
+</body>
+</html>
